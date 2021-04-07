@@ -91,6 +91,7 @@ namespace IdnoPlugins\Text {
                 $access      = \Idno\Core\Idno::site()->currentPage()->getInput('access');
                 $this->setAccess($access);
 
+                 \Idno\Core\Idno::site()->logging()->debug("Slug from page: " . \Idno\Core\Idno::site()->currentPage()->getInput('slug'));
 
                 $this->setSlug(\Idno\Core\Idno::site()->currentPage()->getInput('slug'));
 
