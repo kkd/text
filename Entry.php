@@ -87,10 +87,12 @@ namespace IdnoPlugins\Text {
                 $this->body  = $body;
                 $this->title = \Idno\Core\Idno::site()->currentPage()->getInput('title');
                 $this->short_description = \Idno\Core\Idno::site()->currentPage()->getInput('subtitle');
-                $this->slug = \Idno\Core\Idno::site()->currentPage()->getInput('slug');
                 $this->tags  = \Idno\Core\Idno::site()->currentPage()->getInput('tags');
                 $access      = \Idno\Core\Idno::site()->currentPage()->getInput('access');
                 $this->setAccess($access);
+
+
+                $this->setSlug(\Idno\Core\Idno::site()->currentPage()->getInput('slug'));
 
                 // Make Entry publish status aware
                 $publish_status = \Idno\Core\Idno::site()->currentPage()->getInput('publish_status', 'published');
@@ -143,7 +145,7 @@ namespace IdnoPlugins\Text {
                 ],
                 'headline' => $this->getTitle(),
                 'description' => $this->getShortDescription(),
-                'slug' => $this->slug,
+                'slug' => $this->getSlug(),
                 'text' => $this->body,
                 'url' => $this->getUrl(),
                 'image' => $this->getIcon()

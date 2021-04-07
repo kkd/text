@@ -67,7 +67,7 @@ if (!empty($vars['object'])) {
                 </div>
 
                 <div class="content-form">
-                    <label for="slug"><?php echo \Idno\Core\Idno::site()->language()->_('Subtitle'); ?></label>
+                    <label for="slug"><?php echo \Idno\Core\Idno::site()->language()->_('Slug'); ?></label>
                     <?php echo $this->__(['name' => 'slug', 'placeholder' => \Idno\Core\Idno::site()->language()->_('Optional slug  for this post'), 'id' => 'slug', 'value' => $slug, 'class' => 'form-control'])->draw('forms/input/input'); ?>
                 </div>
 
