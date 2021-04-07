@@ -16,6 +16,11 @@ if (!empty($vars['object']->short_description)) {
 } else {
     $subtitle = '';
 }
+if (!empty($vars['object']->slug)) {
+    $slug = $vars['object']->slug;
+} else {
+    $slug = '';
+}
 if (!empty($vars['object'])) {
     $object = $vars['object'];
 } else {
@@ -61,6 +66,10 @@ if (!empty($vars['object'])) {
                     <?php echo $this->__(['name' => 'subtitle', 'placeholder' => \Idno\Core\Idno::site()->language()->_('Optional sub title for this post'), 'id' => 'subtitle', 'value' => $subtitle, 'class' => 'form-control'])->draw('forms/input/input'); ?>
                 </div>
 
+                <div class="content-form">
+                    <label for="slug"><?php echo \Idno\Core\Idno::site()->language()->_('Subtitle'); ?></label>
+                    <?php echo $this->__(['name' => 'slug', 'placeholder' => \Idno\Core\Idno::site()->language()->_('Optional slug  for this post'), 'id' => 'slug', 'value' => $slug, 'class' => 'form-control'])->draw('forms/input/input'); ?>
+                </div>
 
                 <?php echo $this->__([
                     'name' => 'body',
