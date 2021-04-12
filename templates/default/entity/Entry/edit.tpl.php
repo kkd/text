@@ -16,8 +16,8 @@ if (!empty($vars['object']->short_description)) {
 } else {
     $subtitle = '';
 }
-if (!empty($vars['object']->slug)) {
-    $slug = $vars['object']->slug;
+if (!empty($vars['object']->getSlug())) {
+    $slug = $vars['object']->getSlug();
 } else {
     $slug = '';
 }
