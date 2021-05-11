@@ -187,6 +187,17 @@ if (!empty($vars['url'])) {
         });
     });
 
+    $(document).ready(function () {
+        $('#body').change(function () {
+            var url = Unfurl.getFirstUrl($(this).val());
+            var unfurl = $(this).closest('form').find('.unfurl');
+            console.log(url);
+            unfurl.attr('data-url', url);
+            Unfurl.unfurl(unfurl);
+        });
+    });
+
+
     $(document).ready(function(){
         // Autosave the title & body
         autoSave('entry', ['title', 'body'], {
